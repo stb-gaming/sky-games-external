@@ -24,10 +24,6 @@
 			flex-wrap: wrap;
 			gap: .3em;
 
-
-
-
-
 		.game-item {
 			background-color: #c9c8c4;
 			position: relative;
@@ -44,12 +40,11 @@
 			border-left-color: white;
 
 
-			{% for n in (1..9) %}
-			&:nth-child({{n}})::before {
-				content: "{{n}}";
-				margin-bottom: auto;
-			}
-			{% endfor %}
+			@for $n from 1 through 10 {
+				&:nth-child($n)::before {
+					content: "{{n}}";
+					margin-bottom: auto;
+				}
 
 			img {
 				width: 150px;
